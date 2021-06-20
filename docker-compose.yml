@@ -11,8 +11,8 @@ services:
     image: nginx:alpine
     container_name: brok-webserver
     ports:
-        - "80:80"
-        - "443:443"
+        - "80:5000"
+        - "443:5000"
     working_dir: /usr/app
 
   db:
