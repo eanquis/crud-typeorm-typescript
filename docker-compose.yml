@@ -1,0 +1,20 @@
+version: '3.0'
+
+services:
+  server:
+    build: .
+    ports:
+      - "5000:5000"  
+    command: npm run start
+
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=brok
+      - POSTGRES_PASSWORD=brok
+      - POSTGRES_DB=db_brok
+    volumes:
+      - data:/var/lib/postgresql/data
+
+volumes:
+  data:
