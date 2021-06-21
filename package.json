@@ -20,7 +20,7 @@
       "typeorm-pagination": "^2.0.1"
    },
    "scripts": {
-      "start": "node src/index.ts",
-      "dev": "nodemon src/index.ts"
+      "start": "ts-node src/index.ts",
+      "dev": "ts-node-dev src/index.ts"
    }
 }
