@@ -1,43 +1,35 @@
 import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  ManyToOne,
-  JoinColumn,
+  Column
 } from "typeorm";
 
-@Entity()
 export class Address {
-  @PrimaryGeneratedColumn("uuid")
-  uuid: number;
 
-  @Column()
+  @Column({nullable: true})
   street: string;
 
-  @Column()
+  @Column({nullable: true})
   complement: string;
 
-  @Column()
+  @Column({nullable: true})
   number: string;
 
-  @Column()
+  @Column({nullable: true})
   neighborhood: string;
 
-  @Column()
+  @Column({nullable: true})
   city: string;
 
-  @Column()
+  @Column({nullable: true})
   state: string;
 
-  @Column()
+  @Column({nullable: true})
   postCode: string;
 
-  @Column()
+  @Column({nullable: true})
   country: string;
 
   static createFromJson(data) {
     let address = new Address();
-    address.uuid = data["uuid"];
     address.street = data["street"];
     address.complement = data["complement"];
     address.number = data["number"];

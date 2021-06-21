@@ -17,7 +17,6 @@ export class Controller {
 
   async all(request: Request, response: Response, next: NextFunction) {
     return await this.repository.createQueryBuilder(this.nameEntity)
-    .orderBy('name', "ASC")
     .paginate()
   }
 
@@ -31,10 +30,9 @@ export class Controller {
   }
 
   async update(request: Request, response: Response, next: NextFunction) {
-   console.log(request.body)
-    let specie = Specie.createFromJson(request.body);
+    let entity = this.entity.createFromJson(request.body);
     try {
-        return await this.repository.save(specie);
+        return await this.repository.save(entity);
     } catch (error) {
         return new Error(error)
     }

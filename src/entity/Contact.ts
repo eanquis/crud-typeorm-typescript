@@ -1,5 +1,5 @@
-import { Address } from "cluster";
-import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, ManyToMany, JoinTable} from "typeorm";
+import { Address } from "./index";
 
 @Entity()
 export class Contact {
@@ -10,20 +10,23 @@ export class Contact {
     @Column()
     name: string;
 
-    @Column()
+    @Column({nullable: true})
     cpf: string;
     
-    @Column()
+    @Column({nullable: true})
     crmv: string;
 
-    @Column()
+    @Column({nullable: true})
     whatsAppPhone: string;
 
-    @Column()
+    @Column({nullable: true})
     optin: boolean;
 
-    @Column()
+    @Column({nullable: true})
     phone: string;
+
+    @Column(type => Address)
+    address: Address;
 
     static createFromJson(data){
         let contact = new Contact()
@@ -34,6 +37,7 @@ export class Contact {
         contact.whatsAppPhone = data['whatsAppPhone']
         contact.optin = data['optin']
         contact.phone = data['phone']
+        contact.address = data['address']
         return contact
     }
 

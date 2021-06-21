@@ -16,7 +16,6 @@ createConnection().then(async connection => {
     app.use(pagination)
     app.use(cors())
     
-
     // register express routes from defined application routes
     Routes.forEach(route => {
         (app as any)[route.method](route.route, (req: Request, res: Response, next: Function) => {
