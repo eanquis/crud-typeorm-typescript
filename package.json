@@ -16,6 +16,8 @@
       "pg": "^8.6.0",
       "reflect-metadata": "^0.1.10",
       "typeorm": "0.2.34",
+      "ts-node": "3.3.0",
+      "ts-node-dev": "^1.1.6",
       "typeorm-pagination": "^2.0.1"
    },
    "scripts": {
