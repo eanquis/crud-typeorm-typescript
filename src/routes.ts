@@ -1,7 +1,6 @@
-import { BreedController, SpecieController, OrganizationController } from "./controller/index";
+import { BreedController, SpecieController, OrganizationController, ContactController } from "./controller/index";
 
 export const Routes = [
-
 
 {
     method: "get",
@@ -75,6 +74,34 @@ export const Routes = [
     route: "/species/:uuid",
     controller: SpecieController,
     action: "one"
+},
+
+//Contact
+{
+    method: "post",
+    route: "/contacts",
+    controller: ContactController,
+    action: "save"
+},
+{
+    method: "put",
+    route: "/contacts",
+    controller: ContactController,
+    action: "update"
+},
+{
+    method: "get",
+    route: "/contacts",
+    controller: ContactController,
+    action: "all"
+},
+{
+    method: "get",
+    route: "/contacts/:uuid",
+    controller: ContactController,
+    action: "one"
 }
+
+
 
 ];

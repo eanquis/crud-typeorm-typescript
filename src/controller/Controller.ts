@@ -2,7 +2,7 @@ import {
   getRepository,
 } from "typeorm";
 import { NextFunction, Request, Response } from "express";
-import { Breed, Specie } from "../entity";
+import { Breed, Specie } from "../entity/index";
 
 export class Controller {
   entity: any;

@@ -5,7 +5,9 @@ services:
     build: .
     ports:
       - "5000:5000"  
-    command: npm run start
+    volumes:
+      - .:/usr/app
+    command: npm run dev
 
   webserver:
     image: nginx:alpine
