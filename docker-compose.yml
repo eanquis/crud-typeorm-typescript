@@ -7,7 +7,7 @@ services:
       - "5000:5000"  
     volumes:
       - .:/usr/app
-    command: npm run dev
+    command: npm run start
 
   webserver:
     image: nginx:latest
